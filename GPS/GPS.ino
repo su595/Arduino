@@ -1,31 +1,31 @@
-#include <TinyGPS++.h>
 #include <SoftwareSerial.h>
 
-static const int RXPin = 4, TXPin = 3;
-static const uint32_t GPSBaud = 9600;
+// Choose two Arduino pins to use for software serial
+int RXPin = 2;
+int TXPin = 3;
 
-// The TinyGPS++ object
-TinyGPSPlus gps;
+//Default baud of NEO-6M is 9600
+int GPSBaud = 9600;
 
-// The serial connection to the GPS device
-SoftwareSerial ss(RXPin, TXPin);
+// Create a software serial port called "gpsSerial"
+SoftwareSerial gpsSerial(RXPin, TXPin);
 
-void setup(){
+void setup()
+{
+  // Start the Arduino hardware serial port at 9600 baud
   Serial.begin(9600);
-  ss.begin(GPSBaud);
+
+  // Start the software serial port at the GPS's default baud
+  gpsSerial.begin(GPSBaud);
+
+  Serial.print("test");
 }
 
-void loop(){
-  Serial.println("loop");
-  // This sketch displays information every time a new sentence is correctly encoded.
-  while (ss.available() > 0){
-    Serial.println("available");
-    gps.encode(ss.read());
-    if (gps.location.isUpdated()){
-      Serial.print("Latitude= "); 
-      Serial.print(gps.location.lat(), 6);
-      Serial.print(" Longitude= "); 
-      Serial.println(gps.location.lng(), 6);
-    }
-  }
+void loop()
+{
+  // Displays information when new sentence is available.
+  while (gpsSerial.available() > 0)
+    Serial.write(gpsSerial.read());
+    Serial.println("---------");
+    
 }
