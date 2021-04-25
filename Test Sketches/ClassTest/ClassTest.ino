@@ -10,6 +10,15 @@ class ClassTest{
       someString = someString + toBeAdded;
       return someString;
     }
+    void changePrivateInt(int change){
+      privateInt = change;
+    }
+    int getPrivateInt(){
+      return privateInt;
+    }
+    
+  private:
+    int privateInt = 0;
 };
 
 void setup() {
@@ -26,6 +35,15 @@ void setup() {
 
   myObject.testString = myObject.addChars(myObject.testString, "+++");
   Serial.println(myObject.testString);
+
+  // Serial.println(myObject.privateInt);
+  // Das hat ein Error schon beim Kompiliren ausgespuckt!!
+
+  // Das Ändern von privateInt mit den Funktionen funktioniert
+  myObject.changePrivateInt(5);
+
+  int tempInt = myObject.getPrivateInt();
+  Serial.println(tempInt);
 }
 
 void loop() {

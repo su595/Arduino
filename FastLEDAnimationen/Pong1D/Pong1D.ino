@@ -43,7 +43,7 @@ int wallAnimationCycle = 80;
 int highestWallLed = 0;
 
 //Festlegung der Spielergröße. Player wird später gerendert durch fill_solid mit Anfang playerLed und Länge PLAYER_WIDTH
-//Eventuell kann ich PlayerLed um Ressourcen zu sparen durch ein #define PLAYER_LED ersetzen, dann muss diese Rechnung manuell durchgeführt werden
+//Eventuell kann ich PlayerLed um Ressourcen zu sparen durch ein #define PLAYER_LED ersetzen, dann muss diese Rechnung manuell durchgeführt werden -> wirklich?
 const int playerLed = NUM_LEDS - SPACE_BETWEEN_END_AND_PLAYER - PLAYER_WIDTH;
 
 //Wenn playerInput oder lastPlayerInput true sind, dann ist der Knopf gedrückt (Wegen internen Pullup-Widerständen entspricht das einer Spannung am PLAYER_PIN von 0V)
