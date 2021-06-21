@@ -15,7 +15,7 @@
 
 #include "camera_pins.h"
 
-const char* ssid = "extender";
+const char* ssid = "o2-WLAN71";
 const char* password = "GYCNZ8U7B3DB6LVN";
 
 void startCameraServer();
