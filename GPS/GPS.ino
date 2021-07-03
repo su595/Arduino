@@ -24,8 +24,9 @@ void setup()
 void loop()
 {
   // Displays information when new sentence is available.
-  while (gpsSerial.available() > 0)
+  while (gpsSerial.available() > 0){
     Serial.write(gpsSerial.read());
     Serial.println("---------");
+  }
     
 }

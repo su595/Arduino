@@ -7,7 +7,7 @@ float roll, pitch, yaw;
 float AccErrorX, AccErrorY, GyroErrorX, GyroErrorY, GyroErrorZ;
 float elapsedTime, currentTime, previousTime;
 
-void setup() {
+void setupMPU() {
     Serial.begin(9600);
     Wire.begin();                      // Initialize comunication
     Wire.beginTransmission(MPU);       // Start communication with MPU6050 // MPU=0x68
@@ -33,15 +33,8 @@ void setup() {
 }
 unsigned long lastMPU = 0;
 
-void loop(){
-    unsigned long currentMillis = millis();
 
-    if(currentMillis - lastMPU > 10){
-        lastMPU = currentMillis;
-        loopMPU();
-    }
-}
-void loopMPU() {
+void getMotionWithoutLib() {
     // === Read acceleromter data === //
     Wire.beginTransmission(MPU);
     Wire.write(0x3B); // Start with register 0x3B (ACCEL_XOUT_H)
@@ -145,4 +138,13 @@ void calculate_IMU_error() {
     Serial.println(GyroErrorY);
     Serial.print("GyroErrorZ: ");
     Serial.println(GyroErrorZ);
+}
+
+void loop(){
+    unsigned long currentMillis = millis();
+
+    if(currentMillis - lastMPU > 10){
+        lastMPU = currentMillis;
+        loopMPU();
+    }
 }
