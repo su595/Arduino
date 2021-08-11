@@ -28,6 +28,7 @@ void setup() {
 }
 
 void loop() {
+  Serial.println("loooop sender");
 
   /* See Example: TypeA_WithDIPSwitches */
   mySwitch.switchOn("11111", "00010");

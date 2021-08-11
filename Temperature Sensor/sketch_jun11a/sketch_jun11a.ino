@@ -14,6 +14,7 @@ void setup() {
     Serial.println("Could not find a valid BME280 sensor, check wiring!");
     while (1);
   }
+  Serial.println("BME sucessfully initialised");
 }
 
 void loop() {
