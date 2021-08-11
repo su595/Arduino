@@ -26,6 +26,7 @@ void loop(){
   
   // Displays information when new sentence is available.
   while (gpsSerial.available() > 0){
+<<<<<<< HEAD
     byte by = gpsSerial.read();
 
     // after a 200ms delay we assume it is a new cluster of sentences
@@ -40,6 +41,10 @@ void loop(){
     }
     
     Serial.write(by);
+=======
+    Serial.write(gpsSerial.read());
+    Serial.println("---------");
+>>>>>>> ececbecd205f41a9d67435861a9fcf0ebe28ca04
   }
     
 }

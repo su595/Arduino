@@ -10,7 +10,7 @@ float roll, pitch, yaw;
 float averageAccX, averageAccY, averageAccZ, averageRoll, averagePitch, averageYaw;
 unsigned long lastMPU = 0;
 
-void setup() {
+void setupMPU() {
     Serial.begin(9600);
     
     Wire.begin();                      // Initialize comunication
@@ -26,9 +26,8 @@ void setup() {
     
 }
 
-void loop(){
-    unsigned long currentMillis = millis();
 
+<<<<<<< HEAD
     if(currentMillis - lastMPU > MPU_UPDATE_FREQUENCY){
         int dt = currentMillis - lastMPU;
         lastMPU = currentMillis;
@@ -57,6 +56,9 @@ void updateMPU(int dt){
 }
 
 void getMotionWithoutLib(int dt) {
+=======
+void getMotionWithoutLib() {
+>>>>>>> ececbecd205f41a9d67435861a9fcf0ebe28ca04
     // === Read acceleromter data === //
 
     Wire.beginTransmission(MPU);
@@ -153,3 +155,15 @@ void calculate_IMU_error() {
     Serial.print("GyroErrorZ: ");
     Serial.println(GyroErrorZ);
 }
+<<<<<<< HEAD
+=======
+
+void loop(){
+    unsigned long currentMillis = millis();
+
+    if(currentMillis - lastMPU > 10){
+        lastMPU = currentMillis;
+        loopMPU();
+    }
+}
+>>>>>>> ececbecd205f41a9d67435861a9fcf0ebe28ca04
