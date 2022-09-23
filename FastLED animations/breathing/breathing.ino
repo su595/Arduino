@@ -1,7 +1,7 @@
 #include <FastLED.h>
 
-#define NUM_LEDS 144
-#define DATA_PIN 14
+#define NUM_LEDS 288
+#define DATA_PIN 19
 #define DELAY_BETWEEN_STEPS 3
 #define DELAY_BETWEEN_COLORS 3
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'> <!--Damit das reinzoomen bei Smartphones verhindert wird (strg-v aus dem Internet)-->
+        <link rel="shortcut icon" href="./media/favicon.ico" />
+        <title> Grundgerüst </title>
+    </head>
+
+    <body>
+        <h1>
+            Blue drops
+        </h1>
+
+        <table>
+            <form action="./drops.html" method="get"> 
+                <tr>
+                    <td style="text-align:end;">
+                        <label for="delay">Delay per program loop (more is slower): </label> 
+                    </td>
+                    <td>
+                        <input type="number" name="delay" id="" min="0" value="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:end;">
+                        <label for="random">Likelyhood that a drop is created each loop (more is less likely): </label>
+                    </td>
+                    <td>
+                        <input type="number" name="random" id="" min="0" value="30"> <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:end;">
+                        <label for="dimming">Speed of LED brightness loss (more is faster): </label>
+                    </td>
+                    <td>
+                        <input type="number" name="dimming" id="" min="0" max="255" value="5"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:end;">
+                        <label for="min_H">Range of hues of drops (min-max): </label>
+                    </td>
+                    <td>
+                        <input type="number" name="min_H" id="" min="0" max="255" value="130"> <br>
+                        <input type="number" name="max_H" id="" min="0" max="255" value="180"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:end;">
+                        <label for="S">Saturation: </label>
+                    </td>
+                    <td>
+                        <input type="number" name="S" id="" min="0" max="255" value="255"> <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:end;">
+                        <label for="I">Intensity: </label>
+                    </td>
+                    <td>
+                        <input type="number" name="I" id="" min="0" max="255" value="255"> <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <br>
+                        <input type="submit" name="" id="" value="Update LED configuration">
+                    </td>
+                </tr>
+                
+            </form>
+
+        </table>
+    </body>

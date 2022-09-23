@@ -2,8 +2,8 @@
 #include <SoftwareSerial.h>
 
 // Choose two Arduino pins to use for software serial
-int RXPin = 2;
-int TXPin = 3;
+int RXPin = 8;
+int TXPin = 9;
 
 int GPSBaud = 9600;
 
@@ -16,7 +16,7 @@ SoftwareSerial gpsSerial(RXPin, TXPin);
 void setup()
 {
   // Start the Arduino hardware serial port at 9600 baud
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   // Start the software serial port at the GPS's default baud
   gpsSerial.begin(GPSBaud);

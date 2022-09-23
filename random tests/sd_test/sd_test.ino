@@ -16,7 +16,7 @@ Serial.println("initialization done.");
 
 // open the file. note that only one file can be open at a time,
 // so you have to close this one before opening another.
-myFile = SD.open("logs/test-12-12.txt", FILE_WRITE);
+myFile = SD.open("test.txt", FILE_WRITE);
 // if the file opened okay, write to it:
 if (myFile) {
 Serial.print("Writing to test.txt...");
